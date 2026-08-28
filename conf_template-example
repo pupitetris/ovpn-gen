@@ -1,0 +1,54 @@
+# Basic ovpn profile options.
+
+# Rename this file to conf_template and customize to your needs.
+# See openvpn(8) and /usr/share/doc/openvpn for reference.
+# ovpn-gen will add peer-fingerprint, ca, cert and key sections at the end.
+
+# Accept options pushed by the server (such as routing options).
+pull
+
+# Enable TLS and assume client role during
+# TLS handshake.
+tls-client
+
+# Set log file verbosity.
+verb 4
+
+# Silence repeating messages
+;mute 20
+
+# Use the same setting as you are using on
+# the server.
+# On most systems, the VPN will not function
+# unless you partially or fully disable
+# the firewall for the TUN/TAP interface.
+;dev tap
+dev tun
+
+# Remote host name or IP address.
+remote vpn.myorg.com
+
+# Are we connecting to a TCP or
+# UDP server?  Use the same setting as
+# on the server.
+;proto tcp4
+proto udp4
+
+# TCP/UDP port number or port name. Port 1194 represents
+# the official IANA port number assignment for OpenVPN.
+port 1194
+
+# Do  not  bind to local address and port. The IP stack
+# will allocate a dynamic port for returning packets.
+nobind
+
+# Keep trying indefinitely to resolve the
+# host name of the OpenVPN server.  Very useful
+# on machines which are not permanently connected
+# to the internet such as laptops.
+resolv-retry infinite
+
+# Require that peer certificate was signed with an
+# explicit key usage and extended key usage based
+# on RFC3280 TLS rules.
+remote-cert-tls server
