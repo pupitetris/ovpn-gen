@@ -1,12 +1,13 @@
 # ovpn-gen
+
 Shell script for OpenVPN client profile management
 
 
 ## Setup
 
 After cloning, copy `config-example.sh` to `config.sh`, copy
-`conf_template-example` to `conf_template` and copy `vars.example` to
-`vars`, then edit these files to suit your needs.
+`profile_template-example` to `profile_template` and copy
+`vars.example` to `vars`, then edit these files to suit your needs.
 
 Required software (Debian packages, for other distros the names will vary):
 
