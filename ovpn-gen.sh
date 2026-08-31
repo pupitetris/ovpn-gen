@@ -58,7 +58,7 @@ function easyrsa {
     if [ -n "$DEBUG" ]; then
 	EASYRSA_DEBUG=1 ${EASYRSA:-/usr/share/easy-rsa/easyrsa} --batch --vars="$scriptdir"/vars "$@"
     else
-	${EASYRSA:-/usr/share/easy-rsa/easyrsa} --batch --vars="$scriptdir"/vars --silent "$@"
+	${EASYRSA:-/usr/share/easy-rsa/easyrsa} --sbatch --vars="$scriptdir"/vars --silent "$@"
     fi
 }
 
