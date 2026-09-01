@@ -148,6 +148,7 @@ if [ ! -d "$server_dir" ]; then
     mkdir -p "$server_dir"
     pushd "$server_dir" > /dev/null
     easyrsa init-pki
+    easyrsa gen-dh
     easyrsa gen-req server nopass
     popd > /dev/null
 fi
